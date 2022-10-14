@@ -5,7 +5,7 @@ import CurrentWeather from './components/currentWeather/CurrentWeather';
 function App() {
 
   const handleOnSearchChange = (searchData) => {
-    console.log(searchData);
+    const [lat, lon] = searchData.value.split('');
   }
 
   return (
