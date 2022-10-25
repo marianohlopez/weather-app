@@ -1,39 +1,39 @@
 import './currentWeather.css'
 
-const CurrentWeather = () => {
+const CurrentWeather = ({ data }) => {
     return (
         <div className='weather'>
-                <div className='top'>
-                    <div>
-                        <p className='city'>Belgrade</p>
-                        <p className='weatherDescription'>Sunny</p>
-                    </div>
-                    <img alt='weather' className='weatherIcon' src='icons/01d.png'/>
+            <div className='top'>
+                <div>
+                    <p className='city'>{data.city}</p>
+                    <p className='weatherDescription'>{data.weather[0].description}</p>
                 </div>
-                <div className='bottom'>
-                    <p className='temperature'>18°c</p>
-                    <div className='details'>
-                        <div className='parameterRow'>
-                            <span className='parameterLabel'>Detalles</span>
-                        </div>
-                        <div className='parameterRow'>
-                            <span className='parameterLabel'>S. Térmica</span>
-                            <span className='parameterValue'>22°c</span>
-                        </div>
-                        <div className='parameterRow'>
-                            <span className='parameterLabel'>Viento</span>
-                            <span className='parameterValue'>2 m/s</span>
-                        </div>
-                        <div className='parameterRow'>
-                            <span className='parameterLabel'>Humedad</span>
-                            <span className='parameterValue'>15%</span>
-                        </div>
-                        <div className='parameterRow'>
-                            <span className='parameterLabel'>Presión</span>
-                            <span className='parameterValue'>15 hpa</span>
-                        </div>
+                <img alt='weather' className='weatherIcon' src={`icons/${data.weather[0].icon}.png`} />
+            </div>
+            <div className='bottom'>
+                <p className='temperature'>{Math.round(data.main.temp)}°C</p>
+                <div className='details'>
+                    <div className='parameterRow'>
+                        <span className='parameterLabel'>Detalles</span>
+                    </div>
+                    <div className='parameterRow'>
+                        <span className='parameterLabel'>S. Térmica</span>
+                        <span className='parameterValue'>{Math.round(data.main.feels_like)}°C</span>
+                    </div>
+                    <div className='parameterRow'>
+                        <span className='parameterLabel'>Viento</span>
+                        <span className='parameterValue'>{data.wind.speed} m/s</span>
+                    </div>
+                    <div className='parameterRow'>
+                        <span className='parameterLabel'>Humedad</span>
+                        <span className='parameterValue'>{data.main.humidity}%</span>
+                    </div>
+                    <div className='parameterRow'>
+                        <span className='parameterLabel'>Presión</span>
+                        <span className='parameterValue'>{data.main.pressure} hpa</span>
                     </div>
                 </div>
+            </div>
         </div>
     );
 }
