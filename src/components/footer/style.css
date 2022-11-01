@@ -1,0 +1,12 @@
+footer {
+    height: 50px;
+    background-color: #d5d4d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footerTitle {
+    font-weight: 600;
+}

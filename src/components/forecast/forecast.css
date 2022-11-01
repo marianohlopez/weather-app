@@ -1,6 +1,7 @@
 .title {
     font-size: 23px;
     font-weight: 700;
+    margin-left: 20px;
 }
 
 .dailyItem {
@@ -40,6 +41,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
 }
 
 .dailyDetailsItem {
@@ -57,3 +60,4 @@
 .dailyDetailsItem label:last-child {
     color: #212121;
 }
+
